@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Connect } from './components/Connect';
+import { WalletStatus } from './components/WalletStatus';
 import styled from 'styled-components';
 
 const StyledAppDiv = styled.div`
@@ -12,6 +13,7 @@ function App() {
   return (
     <StyledAppDiv>
       <Connect />
+      <WalletStatus />
     </StyledAppDiv>
   );
 }

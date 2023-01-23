@@ -5,7 +5,7 @@ import { useCallback } from "react";
 
 export function useWeb3Connect() {
   const { activate, active } = useWeb3React();
-  const { tried, setTried } = useState(false);
+  const [tried, setTried] = useState(false);
 
   const tryActivate = useCallback(() => {
     async function _tryActivate() {
@@ -17,7 +17,7 @@ export function useWeb3Connect() {
       setTried(true)
     }
     _tryActivate()
-  }, [setTried, activate]);
+  }, [activate]);
 
   useEffect(() => {
     tryActivate()
@@ -27,7 +27,7 @@ export function useWeb3Connect() {
     if (!tried && active) {
       setTried(true)
     }
-  }, [tried, active, setTried])
+  }, [tried, active])
 
   return tried;
 };

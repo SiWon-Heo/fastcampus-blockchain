@@ -28,7 +28,7 @@ function Activate() {
   function handleActive(event) {
     event.preventDefault();
 
-    async function _activate() {
+    async function _activate(activate) {
       setActivating(true)
       await activate(injected)
       setActivating(false)
